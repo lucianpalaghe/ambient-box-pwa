@@ -26,21 +26,25 @@
             ></path>
           </svg>
         </button>
-        <div v-if="sensorData.battery === 0">
-          <svg class="w-8 h-10 fill-charging" viewBox="0 0 55 30">
-            <path
-              d="M 18.75,11.38 C 18.75,11.38 10.62,14.87 10.62,14.87   10.62,14.87 16.38,15.00 16.38,15.00   21.38,15.00 22.25,15.37 23.88,18.62   23.88,18.62 25.62,22.25 25.62,22.25   25.62,22.25 33.75,19.00 33.75,19.00   33.75,19.00 41.75,15.62 41.75,15.62   41.75,15.62 36.12,15.25 36.12,15.25   31.25,14.87 30.12,14.38 28.63,11.38   28.63,11.38 26.88,7.88 26.88,7.88   26.88,7.88 18.75,11.38 18.75,11.38 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
-            ></path>
-          </svg>
-        </div>
-        <div v-else-if="sensorData.battery === 1">
-          <svg class="w-8 h-10 fill-current" viewBox="0 0 55 30">
-            <path
-              d="M 5.00,15.00 C 5.00,15.00 5.00,25.00 5.00,25.00   5.00,25.00 26.25,25.00 26.25,25.00   26.25,25.00 47.50,25.00 47.50,25.00   47.50,25.00 47.50,15.00 47.50,15.00   47.50,15.00 47.50,5.00 47.50,5.00   47.50,5.00 26.25,5.00 26.25,5.00   26.25,5.00 5.00,5.00 5.00,5.00   5.00,5.00 5.00,15.00 5.00,15.00 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
-            ></path>
-          </svg>
+        <div v-if="sensorData.battery === 3">
+          <button @click="toggleDarkMode()">
+            <svg class="w-8 h-10 fill-charging" viewBox="0 0 55 30">
+              <path
+                d="M 18.75,11.38 C 18.75,11.38 10.62,14.87 10.62,14.87   10.62,14.87 16.38,15.00 16.38,15.00   21.38,15.00 22.25,15.37 23.88,18.62   23.88,18.62 25.62,22.25 25.62,22.25   25.62,22.25 33.75,19.00 33.75,19.00   33.75,19.00 41.75,15.62 41.75,15.62   41.75,15.62 36.12,15.25 36.12,15.25   31.25,14.87 30.12,14.38 28.63,11.38   28.63,11.38 26.88,7.88 26.88,7.88   26.88,7.88 18.75,11.38 18.75,11.38 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
+              ></path>
+            </svg>
+          </button>
         </div>
         <div v-else-if="sensorData.battery === 2">
+          <button @click="toggleDarkMode()">
+            <svg class="w-8 h-10 fill-current" viewBox="0 0 55 30">
+              <path
+                d="M 5.00,15.00 C 5.00,15.00 5.00,25.00 5.00,25.00   5.00,25.00 26.25,25.00 26.25,25.00   26.25,25.00 47.50,25.00 47.50,25.00   47.50,25.00 47.50,15.00 47.50,15.00   47.50,15.00 47.50,5.00 47.50,5.00   47.50,5.00 26.25,5.00 26.25,5.00   26.25,5.00 5.00,5.00 5.00,5.00   5.00,5.00 5.00,15.00 5.00,15.00 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div v-else-if="sensorData.battery === 1">
           <button @click="toggleDarkMode()">
             <svg class="w-8 h-10 fill-current" viewBox="0 0 55 30">
               <path
@@ -49,12 +53,14 @@
             </svg>
           </button>
         </div>
-        <div v-else-if="sensorData.battery === 3">
-          <svg class="w-8 h-10 fill-current" viewBox="0 0 55 30">
-            <path
-              d="M 5.00,15.00 C 5.00,15.00 5.00,25.00 5.00,25.00   5.00,25.00 11.25,25.00 11.25,25.00   11.25,25.00 17.50,25.00 17.50,25.00   17.50,25.00 17.50,15.00 17.50,15.00   17.50,15.00 17.50,5.00 17.50,5.00   17.50,5.00 11.25,5.00 11.25,5.00   11.25,5.00 5.00,5.00 5.00,5.00   5.00,5.00 5.00,15.00 5.00,15.00 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
-            ></path>
-          </svg>
+        <div v-else-if="sensorData.battery === 0">
+          <button @click="toggleDarkMode()">
+            <svg class="w-8 h-10 fill-red" viewBox="0 0 55 30">
+              <path
+                d="M 5.00,15.00 C 5.00,15.00 5.00,25.00 5.00,25.00   5.00,25.00 11.25,25.00 11.25,25.00   11.25,25.00 17.50,25.00 17.50,25.00   17.50,25.00 17.50,15.00 17.50,15.00   17.50,15.00 17.50,5.00 17.50,5.00   17.50,5.00 11.25,5.00 11.25,5.00   11.25,5.00 5.00,5.00 5.00,5.00   5.00,5.00 5.00,15.00 5.00,15.00 Z M 1.50,1.50 C -0.50,3.50 -0.50,26.50 1.50,28.50   3.63,30.62 48.88,30.62 51.00,28.50   51.88,27.62 52.50,25.50 52.50,23.62   52.50,21.75 53.12,19.75 53.75,19.38   54.50,19.00 55.00,17.00 55.00,15.00   55.00,13.00 54.50,11.00 53.75,10.62   53.12,10.25 52.50,8.25 52.50,6.37   52.50,4.50 51.88,2.37 51.00,1.50   48.88,-0.62 3.63,-0.62 1.50,1.50 Z M 49.38,15.00 C 49.38,15.00 49.38,26.88 49.38,26.88   49.38,26.88 26.25,26.88 26.25,26.88   26.25,26.88 3.12,26.88 3.12,26.88   3.12,26.88 2.75,16.38 2.75,16.38   2.50,10.62 2.62,5.12 3.00,4.12   3.63,2.75 8.25,2.50 26.50,2.75   26.50,2.75 49.38,3.12 49.38,3.12   49.38,3.12 49.38,15.00 49.38,15.00 Z"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -68,7 +74,9 @@
         </svg>
         <div class="text-xl ml-1">Temperature</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.temperature }}°C</div>
+      <div class="text-2xl font-semibold">
+        {{ sensorData.temperature ? sensorData.temperature + `°C` : "" }}
+      </div>
     </div>
     <div class="flex items-center justify-between my-2">
       <div class="flex items-center">
@@ -79,7 +87,9 @@
         </svg>
         <div class="text-xl ml-1">Humidity</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.humidity }}%</div>
+      <div class="text-2xl font-semibold">
+        {{ sensorData.humidity ? sensorData.humidity + `%` : "" }}
+      </div>
     </div>
     <div class="flex items-center justify-between my-2">
       <div class="flex items-center">
@@ -91,7 +101,9 @@
         </svg>
         <div class="text-xl ml-1">Altitude</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.altitude }}m</div>
+      <div class="text-2xl font-semibold">
+        {{ sensorData.altitude ? sensorData.altitude + `m` : "" }}
+      </div>
     </div>
     <div class="flex items-center justify-between my-2">
       <div class="flex items-center">
@@ -102,7 +114,9 @@
         </svg>
         <div class="text-xl ml-1">Pressure</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.pressure }}Pa</div>
+      <div class="text-2xl font-semibold">
+        {{ sensorData.pressure ? sensorData.pressure + `Pa` : "" }}
+      </div>
     </div>
     <div class="flex items-center justify-between my-2">
       <div class="flex items-center">
@@ -113,7 +127,7 @@
         </svg>
         <div class="text-xl ml-1">IAQ</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.iaq }}</div>
+      <div class="text-2xl font-semibold">{{ getIaqText(sensorData.iaq) }}</div>
     </div>
     <div class="flex items-center justify-between my-2">
       <div class="flex items-center">
@@ -124,7 +138,9 @@
         </svg>
         <div class="text-xl ml-1">IAQ accuracy</div>
       </div>
-      <div class="text-2xl font-semibold">{{ sensorData.iaqAccuracy }}</div>
+      <div class="text-2xl font-semibold">
+        {{ getIaqAccuracyText(sensorData.iaqAccuracy) }}
+      </div>
     </div>
   </div>
 </template>
@@ -132,7 +148,12 @@
 <script lang="ts">
 /// <reference types="web-bluetooth" />
 import { Component, Vue } from "vue-property-decorator";
-import { SensorData } from "@/interfaces/SensorData";
+import {
+  IAQAccuracy,
+  IAQState,
+  BatteryLevel,
+  SensorData
+} from "@/interfaces/SensorData";
 
 const serviceId = "83613d85-967c-4a59-8190-e39097cf9a72";
 const characteristicId = "0db3cc41-1fe7-49fc-9552-84df888df33b";
@@ -143,23 +164,14 @@ export default class HelloWorld extends Vue {
   private connected = false;
   private darkMode = false;
   private sensorData: SensorData = {
-    temperature: "23.4",
-    humidity: "47",
-    altitude: "663",
-    pressure: "93925",
-    iaq: "Good",
-    iaqAccuracy: "Calibrating",
-    battery: 2
+    temperature: "",
+    humidity: "",
+    altitude: "",
+    pressure: "",
+    iaq: IAQState.UNKNOWN,
+    iaqAccuracy: IAQAccuracy.UNKNOWN,
+    battery: BatteryLevel.UNKNOWN
   };
-
-  // private sensorData: SensorData = {
-  //   temperature: "-",
-  //   humidity: "-",
-  //   altitude: "-",
-  //   pressure: "-",
-  //   iaq: "-",
-  //   iaqAccuracy: "-"
-  // };
 
   private dec = new TextDecoder("utf-8");
 
@@ -211,11 +223,11 @@ export default class HelloWorld extends Vue {
   }
 
   parseByteValues(data: any) {
-    this.sensorData.temperature = data.getFloat32(0, true);
-    this.sensorData.humidity = data.getFloat32(4, true);
+    this.sensorData.temperature = data.getFloat32(0, true).toFixed(1);
+    this.sensorData.humidity = data.getFloat32(4, true).toFixed(1);
     this.sensorData.pressure = data.getFloat32(8, true);
     this.sensorData.altitude = data.getInt16(12, true);
-    this.sensorData.iaq = data.getInt16(14, true);
+    this.sensorData.iaq = data.getInt8(14, true);
     this.sensorData.iaqAccuracy = data.getInt8(15, true);
     this.sensorData.battery = data.getInt8(16, true);
   }
@@ -240,10 +252,42 @@ export default class HelloWorld extends Vue {
   toggleDarkMode() {
     if (!this.darkMode) {
       document.body.classList.add("dark");
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#000");
     } else {
       document.body.classList.remove("dark");
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#F3F4F6");
     }
     this.darkMode = !this.darkMode;
+  }
+
+  getIaqText(iaq: IAQState) {
+    switch (iaq) {
+      case IAQState.GREAT:
+        return "Great";
+      case IAQState.GOOD:
+        return "Good";
+      case IAQState.BAD:
+        return "Bad";
+      case IAQState.HORRIBLE:
+        return "Horrible";
+    }
+  }
+
+  getIaqAccuracyText(iaqAccuracy: IAQAccuracy) {
+    switch (iaqAccuracy) {
+      case IAQAccuracy.STABILIZING:
+        return "Stabilizing";
+      case IAQAccuracy.LOW:
+        return "Low";
+      case IAQAccuracy.MEDIUM:
+        return "Medium";
+      case IAQAccuracy.HIGH:
+        return "High";
+    }
   }
 }
 </script>
@@ -259,6 +303,10 @@ export default class HelloWorld extends Vue {
 
 .fill-charging {
   fill: rgba(3, 252, 107, var(--tw-bg-opacity));
+}
+
+.fill-red {
+  fill: rgba(224, 0, 0, var(--tw-bg-opacity));
 }
 
 .light-shadow {
