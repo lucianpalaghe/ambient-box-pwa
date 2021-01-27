@@ -15,10 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Serve deployment build localy
 ```
-npm run lint
+http-server-spa dist index.html 8080
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
