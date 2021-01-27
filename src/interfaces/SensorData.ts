@@ -5,5 +5,5 @@ export interface SensorData {
     pressure: string;
     iaq: string;
     iaqAccuracy: string;
-    battery: string;
+    battery: number;
 }
