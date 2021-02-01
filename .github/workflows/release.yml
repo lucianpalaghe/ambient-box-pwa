@@ -13,13 +13,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Set tag name
-        uses: olegtarasov/get-tag@v2
-        id: tag
-        with:
-          tagRegex: "v(.*)"
-          tagRegexGroup: 1
-
+      
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
