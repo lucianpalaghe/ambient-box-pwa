@@ -29,6 +29,7 @@ jobs:
 
   create_release:
       needs: [build_artifact]
+      name: Create the release
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
