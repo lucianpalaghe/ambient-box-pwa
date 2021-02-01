@@ -42,7 +42,7 @@ jobs:
 
         - name: Zip dwnloaded artifact
           run: |
-            zip -r dist.zip downloaded_dist
+            zip -r -j dist.zip downloaded_dist
           
         - name: Create Release
           id: create_release
