@@ -38,7 +38,12 @@ jobs:
           uses: actions/download-artifact@v2
           with:
             name: dist
+            path: dist  
 
+        - name: Zip dwnloaded artifact
+          run: |
+            zip --junk-paths dist
+          
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
