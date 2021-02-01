@@ -5,6 +5,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 
 jobs:
   build_artifact:
@@ -32,9 +33,7 @@ jobs:
       name: Create the release
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Build project # This would actually build your project, using zip for an example artifact
+        - name: Zip the dist folder built earlier
           run: |
             zip --junk-paths dist
         - name: Create Release
