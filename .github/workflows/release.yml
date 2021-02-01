@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/upload-artifact@main
         with:
-          name: dist artifacts
+          name: dist
           path: dist/
 
   create_release:
@@ -33,9 +33,12 @@ jobs:
       name: Create the release
       runs-on: ubuntu-latest
       steps:
-        - name: Zip the dist folder built earlier
-          run: |
-            zip --junk-paths dist
+        - name: Download previously uploaded artifact
+          id: download_artifact
+          uses: actions/download-artifact@v2
+          with:
+            name: dist
+
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
@@ -46,6 +49,7 @@ jobs:
             release_name: Release ${{ github.ref }}
             draft: false
             prerelease: false
+
         - name: Upload Release Asset
           id: upload-release-asset 
           uses: actions/upload-release-asset@v1
